@@ -1,7 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Date;
 import java.util.Scanner; 
 
 class TestDate {
@@ -18,16 +17,9 @@ class TestDate {
         sc.close();
 
         // TO DO : your code after this line
-        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
-        Calendar c = new GregorianCalendar();
-        Date d = c.getTime();
-        System.out.println("The date is : " + sdf.format(d)); //OR THIS
-
-        System.out.println("The date is : " + month +"-"+ day +"-"+ year);
-
-
-        Calendar cal = Calendar.getInstance();
-        int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
-        System.out.println("The day of week is : " + dayOfWeek);
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy"); 
+        Calendar c = new GregorianCalendar(year, month - 1, day);
+        System.out.println("The date is : " + sdf.format(c.getTime()));
+        System.out.println("The day of week is : " + c.get(Calendar.DAY_OF_WEEK));
     }
 }
